@@ -54,19 +54,16 @@ class RemoteRR(IRemote):
         """
         logger.info(u"{} Decision".format(self._le2mclt.uid))
         if self._le2mclt.simulation:
-            mother = {}
-            father = {}
+            inputs = {}
             for k in texts_RR.RR_items.viewkeys():
-                mother[k] = random.randint(0, 4)
-                father[k] = random.randint(0, 4)
+                inputs[k] = (random.randint(0, 4), random.randint(0, 4))
             # decision = \
             #     random.randrange(
             #         pms.DECISION_MIN,
             #         pms.DECISION_MAX + pms.DECISION_STEP,
             #         pms.DECISION_STEP)
-            logger.info(u"{} Send back {}, {}".format(self._le2mclt.uid,
-                                                      mother, father))
-            return mother, father
+            logger.info(u"{} Send back {}".format(self._le2mclt.uid, inputs))
+            return inputs
         else: 
             defered = defer.Deferred()
             ecran_decision = GuiDecision(

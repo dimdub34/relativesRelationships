@@ -57,13 +57,13 @@ class PartieRR(Partie):
         """
         logger.debug(u"{} Decision".format(self.joueur))
         debut = datetime.now()
-        moth, fath = yield(self.remote.callRemote("display_decision"))
+        inputs = yield(self.remote.callRemote("display_decision"))
         self.currentperiod.RR_decisiontime = (datetime.now() - debut).seconds
-        for k, v in moth.viewitems():
-            setattr(self.currentperiod, "RR_{}_moth".format(k), v)
-        for k, v in fath.viewitems():
-            setattr(self.currentperiod, "RR_{}_fath".format(k), v)
-        self.joueur.info(u"{}".format(self.currentperiod.RR_decision))
+        for k, v in inputs.viewitems():
+            setattr(self.currentperiod, "RR_{}_moth".format(k), v[0])
+            setattr(self.currentperiod, "RR_{}_fath".format(k), v[1])
+        logger.info(u"{}: {}".format(self.joueur, inputs))
+        self.joueur.info(u"Ok")
         self.joueur.remove_waitmode()
 
     def compute_periodpayoff(self):
