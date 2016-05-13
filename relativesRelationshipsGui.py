@@ -120,8 +120,9 @@ class GuiDecision(QtGui.QDialog):
                 reponses[k] = (v[0].get_checkedbutton(),
                                       v[1].get_checkedbutton())
         except ValueError:
-            QtGui.QMessageBox.warning(self, le2mtrans(u"Warning"),
-                                      u"You must answer to all the questions")
+            QtGui.QMessageBox.warning(
+                self, le2mtrans(u"Warning"),
+                trans_RR(u"You must answer to all the questions"))
             return
 
         if not self._automatique:
