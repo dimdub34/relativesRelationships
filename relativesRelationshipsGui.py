@@ -33,7 +33,7 @@ class GuiDecision(QtGui.QDialog):
         # Explanation
         wexplanation = WExplication(
             text=texts_RR.get_text_explanation(),
-            size=(600, 120), parent=self)
+            size=(600, 100), parent=self)
         layout.addWidget(wexplanation)
 
         # stacked widget: 5 questions max in each widget
