@@ -72,7 +72,7 @@ class PartieRR(Partie):
         :return:
         """
         logger.debug(u"{} Period Payoff".format(self.joueur))
-        self.currentperiod.RR_periodpayoff = 0
+        self.currentperiod.RR_periodpayoff = pms.GAIN_FORFAITAIRE
 
         # cumulative payoff since the first period
         if self.currentperiod.RR_period < 2:

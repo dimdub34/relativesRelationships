@@ -33,7 +33,7 @@ class GuiDecision(QtGui.QDialog):
         # Explanation
         wexplanation = WExplication(
             text=texts_RR.get_text_explanation(),
-            size=(450, 80), parent=self)
+            size=(600, 120), parent=self)
         layout.addWidget(wexplanation)
 
         # stacked widget: 5 questions max in each widget
@@ -46,8 +46,12 @@ class GuiDecision(QtGui.QDialog):
             grid = QtGui.QGridLayout()
             grid.setHorizontalSpacing(100)
             wid.setLayout(grid)
-            grid.addWidget(QtGui.QLabel(u"<strong>Mère</strong>"), 0, 0)
-            grid.addWidget(QtGui.QLabel(u"<strong>Père</strong>"), 0, 1)
+            label_mere = QtGui.QLabel(u"<strong>Mère</strong>")
+            label_mere.setStyleSheet("color: blue; font-size:16px")
+            grid.addWidget(label_mere, 0, 0)
+            label_pere = QtGui.QLabel(u"<strong>Père</strong>")
+            label_pere.setStyleSheet("color: blue; font-size:16px")
+            grid.addWidget(label_pere, 0, 1)
 
             rowcount = 1
             questions = [(k, v) for k, v in sorted(texts_RR.RR_items.viewitems())

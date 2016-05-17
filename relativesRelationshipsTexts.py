@@ -25,7 +25,7 @@ def get_text_explanation():
     return trans_RR(u"Pour chacun des 30 énoncés (répartis sur 6 pages), "
                     u"veuillez cliquer sur le numéro de l'échelle "
                     u"(de 1=pas du tout d'accord à 5=tout à fait d'accord) "
-                    u"qui décri tle mieux la façon dont l'énoncé s'applique "
+                    u"qui décrit le mieux la façon dont l'énoncé s'applique "
                     u"à vous et votre mère (à gauche), à vous et à votre père "
                     u"(à droite) durant les années où vous avez grandi à la "
                     u"maison. Il n'y a pas de bonne ou de mauvaise réponse. "
